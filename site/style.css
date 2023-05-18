@@ -1,14 +1,41 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+ 
+    :root{
+        --corPrincipal: #000;
+        --fonteTitulo: 'Roboto Slab', serif;
+    }
 body{
     margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 header{
     height: 10%;
-    background-color: black;
+    background-color: var(--corPrincipal);
+    display: flex;
+    color: white;
+    justify-content: space-between;
 }
 header img{
-    height: 50px;
+    height: 66px;
 }
-#divMain{
-    height: 100%;
-    /* background-image: url(../ASSETS/fundoTelaInicial.png); */
+.navBar{
+    font-family: var(--fonteTitulo);
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-right: 25px;
+    font-size: 20px;
+}
+header li{
+    list-style: none;
+}
+
+
+#fundoIndex{
+    height: 120vh;
+    width: 100vw;
+    position: absolute;
+    
 }
