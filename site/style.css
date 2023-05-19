@@ -1,41 +1,83 @@
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
- 
-    :root{
-        --corPrincipal: #000;
-        --fonteTitulo: 'Roboto Slab', serif;
-    }
-body{
-    margin: 0;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-header{
-    height: 10%;
-    background-color: var(--corPrincipal);
-    display: flex;
-    color: white;
-    justify-content: space-between;
-}
-header img{
-    height: 66px;
-}
-.navBar{
-    font-family: var(--fonteTitulo);
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
-    margin-right: 25px;
-    font-size: 20px;
-}
-header li{
-    list-style: none;
-}
+
+  :root {
+      --corPrincipal: #000;
+      --fonteTitulo: 'Roboto Slab', serif;
+  }
+
+  body {
+      margin: 0;
+      overflow-y: hidden;
+      overflow-x: hidden;
+  }
+
+  header {
+      /* position: absolute; */
+      height: 10%;
+      background-color: var(--corPrincipal);
+      display: flex;
+      color: white;
+      justify-content: space-between;
+  }
+
+  header img {
+      height: 66px;
+      width: 5%;
+  }
+
+  .navBar {
+      font-family: var(--fonteTitulo);
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      margin-right: 10%;
+      font-size: 20px;
+  }
+
+  header li {
+      list-style: none;
+  }
 
 
-#fundoIndex{
-    height: 120vh;
-    width: 100vw;
-    position: absolute;
-    
-}
+  #fundoIndex {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+  }
+
+  #coverPreto {
+      position: absolute;
+      z-index: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 40%;
+  }
+
+  #divTexto {
+      font-family: var(--fonteTitulo);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20%;
+      margin-left: 20%;
+      color: white;
+      font-size: 30px;
+  }
+
+  #divTexto button {
+      font-family: var(--fonteTitulo);
+      font-size: 25px;
+      width: 80%;
+      height: 50px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      background-color: #009C3B;
+  }
+  #divTexto button:hover{
+    cursor: pointer;
+  }
