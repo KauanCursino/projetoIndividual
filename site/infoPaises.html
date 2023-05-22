@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="infoPaises.css">
 </head>
+
 <body>
     <header>
         <a href="index1.html"><img src="../ASSETS/logo.png"></a>
@@ -19,16 +21,28 @@
     </header>
     <main>
         <div id="divBandeirasDeCima">
-           <img src="../ASSETS/bandeiraBrasil.png" alt="" class="bandeiraPaises" id="bandeiraBrasil">
-           <img src="../ASSETS/bandeiraJapao.png" alt="" class="bandeiraPaises" id="bandeiraJapao">
-
+            <img src="../ASSETS/bandeiraBrasil.png" alt="" class="bandeiraPaises" id="bandeiraBrasil"
+                onclick="mudarParaBrasil()">
+            <img src="../ASSETS/bandeiraJapao.png" alt="" class="bandeiraPaises" id="bandeiraJapao">
         </div>
-        <h1 id="tituloFIVB">ESCOLHA UMA SELEÇÃO DA <span style="color:#002776">F</span><span style="color:#FFCC00">I</span>V<span style="color: #FF0000;">B</span></h1>
+        <h1 id="tituloFIVB">ESCOLHA UMA SELEÇÃO DA <span style="color:#002776">F</span><span
+                style="color:#FFCC00">I</span>V<span style="color: #FF0000;">B</span></h1>
         <div id="divBandeirasDeBaixo">
-           <img src="../ASSETS/bandeiraPolonia.png" alt="" class="bandeiraPaises" id="bandeiraPolonia">
-           <img src="../ASSETS/bandeiraAlemanha.png" alt="" class="bandeiraPaises" id="bandeiraAlemanha">
-
+            <img src="../ASSETS/bandeiraPolonia.png" alt="" class="bandeiraPaises" id="bandeiraPolonia">
+            <img src="../ASSETS/bandeiraAlemanha.png" alt="" class="bandeiraPaises" id="bandeiraAlemanha">
+        </div>
+        <div id="divInfoBrasil" style="display: none;">
+            <h1 style="color: white;">OS IMPERADORES DO VÔLEI</h1>
         </div>
     </main>
 </body>
+
 </html>
+<script>
+    function mudarParaBrasil() {
+        divBandeirasDeCima.style.display = 'none'
+        divBandeirasDeBaixo.style.display = 'none'
+        tituloFIVB.style.display = 'none'
+        divInfoBrasil.style.display = 'block'
+    }
+</script>
