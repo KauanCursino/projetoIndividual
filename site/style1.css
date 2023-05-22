@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+:root {
+    --corPrincipal: #000;
+    --fonteTitulo: 'Roboto Slab', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoTelaIncial.jpg) ;
+    width: 100%;
+    height: 100vh;
+    /* position: fixed; */
+}
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+header img{
+    height: 80px;
+    width: 5%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.menuHeader {
+    display: flex;
+    font-family: var(--fonteTitulo);
+    color: #fff;
+    list-style-type: none;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+#divTexto {
+    font-family: var(--fonteTitulo);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25%;
+    margin-right: 30%;
+    color: white;
+    font-size: 30px;
+}
+
+#divTexto button {
+    font-family: var(--fonteTitulo);
+    font-size: 25px;
+    width: 20%;
+    height: 50px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: #009C3B;
+}
+#divTexto button:hover{
+  cursor: pointer;
+}
+#divBiografia{
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    color: white;
+}

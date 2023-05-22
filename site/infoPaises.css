@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+header img{
+    height: 80px;
+    width: 5%;
+}
+.menuHeader {
+    display: flex;
+    font-family: var(--fonteTitulo);
+    color: #fff;
+    list-style-type: none;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+    main {
+        height: 100vh;
+        background-image: url(ASSETS/fundoSelecaoDosPaises.png);
+        background-size: cover;
+        /* background-size: auto; */
+        /* position: fixed; */
+    }
