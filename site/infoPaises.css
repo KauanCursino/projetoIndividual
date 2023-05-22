@@ -1,16 +1,26 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+:root {
+    --corPrincipal: #000;
+    --fonteTitulo: 'Roboto Slab', serif;
+}
+* {
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: black;
     display: flex;
     justify-content: space-between;
 }
-header img{
+
+header img {
     height: 80px;
-    width: 5%;
+    width: 100%;
 }
+
 .menuHeader {
     display: flex;
     font-family: var(--fonteTitulo);
@@ -22,10 +32,47 @@ header img{
 }
 
 
-    main {
-        height: 100vh;
-        background-image: url(ASSETS/fundoSelecaoDosPaises.png);
-        background-size: cover;
-        /* background-size: auto; */
-        /* position: fixed; */
-    }
+main {
+    height: 155vh;
+    background-image: url(../ASSETS/fundoSelecaoDosPaises.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main button {
+    height: 10px;
+}
+
+#tituloFIVB {
+    font-family: var(--fonteTitulo);
+    text-shadow:4px 4px  #000;
+    margin-left: 27%;
+    color: #fff;
+    /* border: solid 3px black; */
+}
+
+.bandeiraPaises {
+    width: 32%;
+    border-radius: 10px;
+}
+.bandeiraPaises:hover{
+    border: solid 3px;
+    cursor: pointer;
+}
+
+#divBandeirasDeCima {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#bandeiraBrasil:hover{
+    background: url(../ASSETS/fundoSelecaoBruninho.avif);
+    background-size: cover;
+}
+#divBandeirasDeBaixo {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 25%;
+}
