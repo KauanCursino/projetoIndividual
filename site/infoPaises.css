@@ -5,6 +5,7 @@
     --corPrincipal: #000;
     --fonteTitulo: 'Roboto Slab', serif;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -47,7 +48,7 @@ main button {
 
 #tituloFIVB {
     font-family: var(--fonteTitulo);
-    text-shadow:4px 4px  #000;
+    text-shadow: 4px 4px #000;
     margin-left: 27%;
     color: #fff;
     /* border: solid 3px black; */
@@ -57,7 +58,8 @@ main button {
     width: 32%;
     border-radius: 10px;
 }
-.bandeiraPaises:hover{
+
+.bandeiraPaises:hover {
     border: solid 3px;
     cursor: pointer;
 }
@@ -67,15 +69,89 @@ main button {
     justify-content: space-evenly;
 }
 
-#bandeiraBrasil:hover{
-    background: url(../ASSETS/fundoSelecaoBruninho.avif);
+#bandeiraBrasil:hover {
+    background-image: url(../ASSETS/fundoSelecaoBruninho.avif);
     background-size: cover;
 }
+
 #divBandeirasDeBaixo {
     display: flex;
     justify-content: space-evenly;
 }
-#divInfoBrasil{
-    display: flex;    
-    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoSelecaoBruninho.avif) ;
+
+#divInfoBrasil {
+    font-family: var(--fonteTitulo);
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.438))repeat, url(../ASSETS/fundoSelecaoBruninho.avif);
+}
+
+.apelidoEquipe {
+    margin-top: 25%;
+}
+
+.retangulosInfo {
+    display: flex;
+    margin-top: 30%;
+    width: 100%;
+    height: 700px;
+    color: white;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.retangulosConquistas {
+    display: flex;
+    width: 100%;
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+}
+
+.retangulosInfo h1 {
+    width: 10%;
+}
+
+.retangulosInfo hr {
+    border: solid 3px;
+    margin-bottom: 10px;
+}
+
+#iconeBruninho {
+    width: 370px;
+}
+
+.caixaDosNomes {
+    width: 25%;
+}
+
+.caixaConquista {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: solid black 5px;
+}
+
+#logoFIVB {
+    width: 500px;
+}
+
+#logoOlimpiadas {
+    width: 500px;
+}
+
+#divTrofeuDeBaixo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.letraPreta {
+    margin-top: 10%;
+    position: absolute;
+    color: #000;
+    font-weight: 800
 }

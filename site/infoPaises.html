@@ -32,7 +32,27 @@
             <img src="../ASSETS/bandeiraAlemanha.png" alt="" class="bandeiraPaises" id="bandeiraAlemanha">
         </div>
         <div id="divInfoBrasil" style="display: none;">
-            <h1 style="color: white;">OS IMPERADORES DO VÔLEI</h1>
+            <h1 style="color: white;" class="apelidoEquipe">OS IMPERADORES DO VÔLEI</h1>
+            <div class="retangulosInfo" style="background-color: #002776;">
+                <h1>JOGADOR DESTAQUE:</h1>
+                <img src="../ASSETS/iconeBruninho.png" alt="" id="iconeBruninho">
+                <hr style="color: #009C3B;" class="caixaDosNomes">
+                <h1>BRUNO REZENDE</h1>
+                <hr style="color: #FFDF00;" class="caixaDosNomes">
+                <div class="retangulosConquistas" style="background-color: #FFDF00;">
+                    <div class="caixaConquista" style="background-color: white;">
+                        <div id="divTrofeusDeCima">
+                            <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                            <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+
+                        </div>
+                        <div id="divTrofeusDeBaixo">
+                           <p class="letraPreta">X29</p> <img src="../ASSETS/trofeuFIVB.png" alt="" id="trofeuFIVB">
+                           <p class="letraPreta">X11</p> <img src="../ASSETS/medalhaDeOuro.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
@@ -43,6 +63,6 @@
         divBandeirasDeCima.style.display = 'none'
         divBandeirasDeBaixo.style.display = 'none'
         tituloFIVB.style.display = 'none'
-        divInfoBrasil.style.display = 'block'
+        divInfoBrasil.style.display = 'flex'
     }
 </script>
