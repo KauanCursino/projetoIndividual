@@ -31,6 +31,10 @@ body{
     display: flex;
     flex-direction: column;
 }
+body a{
+    color: white;
+    text-decoration: none;
+}
 
 .menuHeader {
     display: flex;

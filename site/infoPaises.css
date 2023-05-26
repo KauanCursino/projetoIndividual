@@ -45,6 +45,10 @@ main {
 main button {
     height: 10px;
 }
+body a{
+    color: white;
+    text-decoration: none;
+}
 
 #tituloFIVB {
     font-family: var(--fonteTitulo);
