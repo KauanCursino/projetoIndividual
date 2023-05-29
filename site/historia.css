@@ -27,15 +27,15 @@ header img{
     height: 80px;
     width: 100%;
 }
+header a{
+    color: white;
+    text-decoration: none;
+}
 body{
     overflow-x: hidden;
     background-color: black;
     display: flex;
     flex-direction: column;
-}
-body a{
-    color: white;
-    text-decoration: none;
 }
 
 .menuHeader {

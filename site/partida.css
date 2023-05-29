@@ -20,6 +20,10 @@ header img{
     height: 80px;
     width: 100%;
 }
+header a{
+    color: white;
+    text-decoration: none;
+}
 .menuHeader {
     display: flex;
     font-family: var(--fonteTitulo);
@@ -31,13 +35,15 @@ header img{
 }   
 
 body{
-    background-image: url(../ASSETS/fundoHaikyuu.png);
-    background-size: cover ;
-    background-repeat: no-repeat;
+   
+    
     height: 100vh;
     width: 100%;
 }
 #divEscolha{
+    background-image: url(../ASSETS/fundoHaikyuu.png);
+    background-size: cover ;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,4 +72,28 @@ body{
     color: white;
     border: none;
     border-radius: 10px;
+}
+.btnProposta:hover{
+    cursor: pointer;
+}
+#divNao{
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoNao.png);
+    gap: 20%;
+    flex-direction: column;
+    align-items: center;
+}
+.textoNao{
+    color: white;
+    font-size: 30px;
+    width: 40%;
+}
+.divFala{
+    background-color: #87CEFA;
+    height: 130px;
+    width: 80%;
+    border-radius: 10px;
+    color: black;
+    font-size: 35px;
 }

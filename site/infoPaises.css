@@ -22,6 +22,10 @@ header img {
     width: 100%;
 }
 
+header a{
+    color: white;
+    text-decoration: none;
+}
 .menuHeader {
     display: flex;
     font-family: var(--fonteTitulo);
@@ -44,10 +48,6 @@ main {
 
 main button {
     height: 10px;
-}
-body a{
-    color: white;
-    text-decoration: none;
 }
 
 #tituloFIVB {

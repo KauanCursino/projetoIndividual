@@ -20,15 +20,33 @@
             <li>LOGIN</li>
         </ul>
     </header>
+
     <div id="divEscolha">
         <p class="texto">Você é escalado para o time titular da Karasuno no final do Campenato Nacional!
             A pressao é enorme, ainda deseja jogar?</p>
         <div id="divBotaoAnime">
-            <button onclick="aceitarProposta" class="btnProposta" style="background-color:#009C3B;">Sim</button>
-            <button onclick="negarProposta" class="btnProposta" style="background-color:#FF0000;">Não</button>
-
+            <button onclick="aceitarProposta()" class="btnProposta" style="background-color:#009C3B;">Sim</button>
+            <button onclick="negarProposta()" class="btnProposta" style="background-color:#FF0000;">Não</button>
+        </div>
+    </div>
+    <div id="divNao" style="display: none;">
+        <h1 style="color: #FF0000; font-size: 50px;">Você recusa a oferta do treinador</h1>
+        <p class="textoNao">
+            Após tanto tempo no banco sem jogar, os pensamentos sobre desistir já haviam te consumido, você tem medo de encarar a pressão de uma final e sai do time
+        </p>
+        <div class="divFala">
+            <p>
+                “Era só um <span style="color: #FF0000;">sonho bobo</span> de clube escolar mesmo”
+            </p>
+            <p style=" margin-left: 60%;">- Você diz, <span style="color: #FF0000;">mentindo</span></p> para si mesmo.
         </div>
     </div>
 </body>
 
 </html>
+<script>
+    function negarProposta() {
+        divEscolha.style.display = 'none';
+        divNao.style.display = 'flex'
+    }
+</script>
