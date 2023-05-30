@@ -27,11 +27,17 @@ header img{
     height: 80px;
     width: 100%;
 }
-header a{
+body a{
     color: white;
     text-decoration: none;
 }
 body{
+    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/logoFIVB.png);
+    /* background-image: url(../ASSETS/logoFIVB.png); */
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     overflow-x: hidden;
     background-color: black;
     display: flex;
@@ -61,17 +67,26 @@ body{
     border: solid #FFDF00 2px;
     border-radius: 10px;
     height: 220px;
-    width: 99%;
+    width: 80%;
+    padding: 1%;
     display: flex;
     align-items: center;
     font-size: 28px;
+    color: #FAF9F6;
 }
 .textoHistoria{
     margin-right: 2%;
-    margin-left: 3%;
+    margin-left: 10%;
+    width: 50%;
+}
+.textoHistoriaCentral{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 50%;
 }
 #imagensHistoria{
     margin-right: 2%;
+    margin-left: 5%;
     height: 220px;
     border-radius: 8px;
 }
@@ -79,7 +94,8 @@ body{
     border: solid #009C3B 2px;
     border-radius: 10px;
     height: 220px;
-    width: 99%;
+    width: 80%;
+    padding: 1%;
     display: flex;
     align-items: center;
     font-size: 28px;
@@ -89,7 +105,8 @@ body{
     border: solid #002776 2px;
     border-radius: 10px;
     height: 220px;
-    width: 99%;
+    width: 80%;
+    padding: 1%;
     display: flex;
     align-items: center;
     font-size: 28px;

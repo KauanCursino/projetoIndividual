@@ -22,7 +22,7 @@ header img {
     width: 100%;
 }
 
-header a{
+body a{
     color: white;
     text-decoration: none;
 }
@@ -41,6 +41,7 @@ main {
     height: 120vh;
     background-image: url(../ASSETS/fundoSelecaoDosPaises.png);
     background-size: cover;
+    background-blend-mode: color-burn;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -74,7 +75,7 @@ main button {
 }
 
 #bandeiraBrasil:hover {
-    background-image: url(../ASSETS/fundoSelecaoBruninho.avif);
+    background-image: url(../ASSETS/fundoSelecaoLeon.webp);
     background-size: cover;
 }
 

@@ -20,7 +20,7 @@ header img{
     height: 80px;
     width: 100%;
 }
-header a{
+body a{
     color: white;
     text-decoration: none;
 }
@@ -51,11 +51,14 @@ body{
     height: 100vh;
 
 }
-.texto{
-    margin-top: 10%;
-    color: white;
+#divTexto{
+    display: flex;
+    justify-content: center;
+    background-color: #87cefa8c;
     font-size: 40px;
     width: 30%;
+    margin-top: 10%;
+    border-radius: 10px;
 }
 #divBotaoAnime{
     display: flex;
