@@ -75,7 +75,6 @@ main button {
 }
 
 #bandeiraBrasil:hover {
-    background-image: url(../ASSETS/fundoSelecaoLeon.webp);
     background-size: cover;
 }
 
@@ -138,25 +137,37 @@ main button {
     flex-direction: column;
     width: 80%;
     border: solid black 5px;
+    padding: 1%;
 }
 
 #logoFIVB {
-    width: 500px;
+    width: 300px;
 }
 
 #logoOlimpiadas {
-    width: 500px;
+    width: 300px;
 }
-
-#divTrofeuDeBaixo{
+#divTrofeusDeCima{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 5%;
 }
-
+#divTrofeusDeBaixo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+    padding: 5%;
+}
+.imgConquistas{
+    width: 170px;
+}
 .letraPreta {
     margin-top: 10%;
-    position: absolute;
+    /* margin-left: 10%; */
     color: #000;
-    font-weight: 800
+    font-weight: 800;
+    font-size: 20px;
+    background-color: rgba(0, 0, 255, 0.384);
+    border-radius: 10px;
+    padding: 5%;
 }
