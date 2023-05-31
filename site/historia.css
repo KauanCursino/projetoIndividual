@@ -9,14 +9,10 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
-main {
-    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoTelaIncial.jpg);
-    width: 100%;
-    height: 100vh;
-    /* position: fixed; */
-}
+
 
 header {
     background-color: black;
@@ -32,14 +28,14 @@ body a{
     text-decoration: none;
 }
 body{
-    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/logoFIVB.png);
+    /* background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/logoFIVB.png); */
     /* background-image: url(../ASSETS/logoFIVB.png); */
     background-position-x: center;
     background-position-y: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     overflow-x: hidden;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.205);
     display: flex;
     flex-direction: column;
 }
@@ -72,7 +68,6 @@ body{
     display: flex;
     align-items: center;
     font-size: 28px;
-    color: #FAF9F6;
 }
 .textoHistoria{
     margin-right: 2%;
@@ -83,6 +78,12 @@ body{
     margin-left: 10%;
     margin-right: 10%;
     width: 50%;
+}
+.textoOrganizacao{
+    margin-left: 7%;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
 }
 #imagensHistoria{
     margin-right: 2%;
@@ -114,6 +115,9 @@ body{
 #centeredText{
     margin-left: 10%;
     
+}
+#divOrganizacao{
+    display: flex;
 }
 #divHaikyuu{
     gap: 25px;
