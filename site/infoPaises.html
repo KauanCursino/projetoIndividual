@@ -14,23 +14,26 @@
         <a href="index.html"><img src="../ASSETS/logo.png"></a>
         <ul class="menuHeader">
             <li><a href="historia.html">HISTÓRIA DE UMA LENDA</a></li>
-            <li>SOBRE MIM</li>
+            <li><a href="sobreMim.html">SOBRE MIM</a></li>
             <li><a href="infoPaises.html">VNL</a></li>
             <li><a href="partida.html">JOGAR</a></li>
-            <li>LOGIN</li>
+            <li><a href="dahsboard.html">PERFIL</a></li>
         </ul>
     </header>
     <main>
         <div id="divBandeirasDeCima">
             <img src="../ASSETS/bandeiraBrasil.png" alt="" class="bandeiraPaises" id="bandeiraBrasil"
                 onclick="mudarParaBrasil()">
-            <img src="../ASSETS/bandeiraJapao.png" alt="" class="bandeiraPaises" id="bandeiraJapao" onclick="mudarParaJapao()">
+            <img src="../ASSETS/bandeiraJapao.png" alt="" class="bandeiraPaises" id="bandeiraJapao"
+                onclick="mudarParaJapao()">
         </div>
         <h1 id="tituloFIVB">ESCOLHA UMA SELEÇÃO DA <span style="color:#002776">F</span><span
                 style="color:#FFCC00">I</span>V<span style="color: #FF0000;">B</span></h1>
         <div id="divBandeirasDeBaixo">
-            <img src="../ASSETS/bandeiraPolonia.png" alt="" class="bandeiraPaises" id="bandeiraPolonia" onclick="mudarParaPolonia()">
-            <img src="../ASSETS/bandeiraAlemanha.png" alt="" class="bandeiraPaises" id="bandeiraAlemanha" onclick="mudarParaAlemanha()">
+            <img src="../ASSETS/bandeiraPolonia.png" alt="" class="bandeiraPaises" id="bandeiraPolonia"
+                onclick="mudarParaPolonia()">
+            <img src="../ASSETS/bandeiraAlemanha.png" alt="" class="bandeiraPaises" id="bandeiraAlemanha"
+                onclick="mudarParaAlemanha()">
         </div>
         <div id="divInfoBrasil" style="display: none;">
             <h1 style="color: white;" class="apelidoEquipe">OS IMPERADORES DO VÔLEI</h1>
@@ -43,16 +46,21 @@
                 <div class="retangulosConquistas" style="background-color: #FFDF00;">
                     <div class="caixaConquista" style="background-color: white;">
                         <div id="divTrofeusDeBaixo">
-                            <div style="display: flex; align-items: center; flex-direction: column;">
-                                <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
-                                <img src="../ASSETS/trofeuFIVB.png" alt="" class ="imgConquistas">
-                                <p class="letraPreta">Campeões mundias 29 vezes</p>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                    <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">Campeões mundias 29 vezes</p>
+                                </div>
                             </div>
-                            <div style="display: flex; align-items: center; flex-direction: column;">
-                                <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
-                                <img src="../ASSETS/medalhaDeOuro.png" alt="" class ="imgConquistas">
-                                <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                    <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -69,16 +77,21 @@
                 <div class="retangulosConquistas" style="background-color: #FFFFFF;">
                     <div class="caixaConquista" style="background-color: white;">
                         <div id="divTrofeusDeBaixo">
-                            <div style="display: flex; align-items: center; flex-direction: column;">
-                                <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
-                                <img src="../ASSETS/trofeuFIVB.png" alt="" class ="imgConquistas">
-                                <p class="letraPreta">Campeões mundias 29 vezes</p>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                    <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">Campeões mundias 29 vezes</p>
+                                </div>
                             </div>
-                            <div style="display: flex; align-items: center; flex-direction: column;">
-                                <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
-                                <img src="../ASSETS/medalhaDeOuro.png" alt="" class ="imgConquistas">
-                                <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                    <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -95,16 +108,22 @@
                 <div class="retangulosConquistas" style="background-color: #FF0000;">
                     <div class="caixaConquista" style="background-color: white;">
                         <div id="divTrofeusDeBaixo">
-                            <div style="display: flex; align-items: center; flex-direction: column;">
-                                <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
-                                <img src="../ASSETS/trofeuFIVB.png" alt="" class ="imgConquistas">
-                                <p class="letraPreta">Campeões mundias 29 vezes</p>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                    <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">Campeões mundias 29 vezes</p>
+                                </div>
                             </div>
-                            <div style="display: flex; align-items: center; flex-direction: column;">
-                                <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
-                                <img src="../ASSETS/medalhaDeOuro.png" alt="" class ="imgConquistas">
-                                <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                    <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -121,14 +140,14 @@
                 <div class="retangulosConquistas" style="background-color: black;">
                     <div class="caixaConquista" style="background-color: white;">
                         <div id="divTrofeusDeBaixo">
-                            <div style="display: flex; align-items: center; flex-direction: column; border: solid 2px black; border-radius: 10px;">
+                            <div class="boxSeparadoraDeTrofeus">
                                 <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
-                                <img src="../ASSETS/trofeuFIVB.png" alt="" class ="imgConquistas">
+                                <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
                                 <p class="letraPreta">Campeões mundias 29 vezes</p>
                             </div>
-                            <div style="display: flex; align-items: center; flex-direction: column;">
+                            <div class="boxSeparadoraDeTrofeus">
                                 <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
-                                <img src="../ASSETS/medalhaDeOuro.png" alt="" class ="imgConquistas">
+                                <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
                                 <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
                             </div>
                         </div>
@@ -147,14 +166,14 @@
         tituloFIVB.style.display = 'none'
         divInfoBrasil.style.display = 'flex'
     }
-    function mudarParaJapao(){
+    function mudarParaJapao() {
         divBandeirasDeCima.style.display = 'none'
         divBandeirasDeBaixo.style.display = 'none'
         tituloFIVB.style.display = 'none'
         divInfoBrasil.style.display = 'none'
         divInfoJapao.style.display = 'flex'
     }
-    function mudarParaPolonia(){
+    function mudarParaPolonia() {
         divBandeirasDeCima.style.display = 'none'
         divBandeirasDeBaixo.style.display = 'none'
         tituloFIVB.style.display = 'none'
@@ -162,7 +181,7 @@
         divInfoJapao.style.display = 'none'
         divInfoPolonia.style.display = 'flex'
     }
-    function mudarParaAlemanha(){
+    function mudarParaAlemanha() {
         divBandeirasDeCima.style.display = 'none'
         divBandeirasDeBaixo.style.display = 'none'
         tituloFIVB.style.display = 'none'

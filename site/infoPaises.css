@@ -22,10 +22,11 @@ header img {
     width: 100%;
 }
 
-body a{
+body a {
     color: white;
     text-decoration: none;
 }
+
 .menuHeader {
     display: flex;
     font-family: var(--fonteTitulo);
@@ -40,7 +41,7 @@ body a{
 main {
     height: 120vh;
     /* background-image: url(../ASSETS/fundoSelecaoDosPaises\ .png); */
-    background:linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.589))repeat,  url(../ASSETS/fundoSelecaoDosPaises\ .png);
+    background: linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.589))repeat, url(../ASSETS/fundoSelecaoDosPaises\ .png);
     background-size: cover;
     background-blend-mode: color-burn;
     display: flex;
@@ -93,6 +94,7 @@ main button {
     background: linear-gradient(rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.438))repeat, url(../ASSETS/fundoSelecaoBruninho.avif);
     background-size: cover;
 }
+
 #divInfoJapao {
     font-family: var(--fonteTitulo);
     height: 100%;
@@ -102,6 +104,7 @@ main button {
     background: linear-gradient(rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.438))repeat, url(../ASSETS/fundoSelecaoYujiNishida.jpeg);
     background-size: cover;
 }
+
 #divInfoPolonia {
     font-family: var(--fonteTitulo);
     height: 100%;
@@ -111,7 +114,8 @@ main button {
     background: linear-gradient(rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.438))no-repeat, url(../ASSETS/fundoSelecaoLeon.webp);
     background-size: cover;
 }
-#divInfoAlemanha{
+
+#divInfoAlemanha {
     font-family: var(--fonteTitulo);
     height: 100%;
     justify-content: center;
@@ -120,6 +124,7 @@ main button {
     background: linear-gradient(rgba(0, 0, 0, 0.438), rgba(0, 0, 0, 0.438))repeat, url(../ASSETS/fundoSelecaoTobias.jpg);
     background-size: cover;
 }
+
 .apelidoEquipe {
     margin-top: 30%;
 }
@@ -134,9 +139,11 @@ main button {
     flex-direction: column;
     align-items: center;
 }
-.nomeJogadores{
+
+.nomeJogadores {
     text-align: center;
 }
+
 .retangulosConquistas {
     display: flex;
     width: 100%;
@@ -157,9 +164,11 @@ main button {
 .iconesJogadores {
     width: 370px;
 }
-#iconeTobias{
+
+#iconeTobias {
     width: 200px;
 }
+
 .caixaDosNomes {
     width: 25%;
 }
@@ -179,23 +188,27 @@ main button {
 #logoOlimpiadas {
     width: 300px;
 }
-#divTrofeusDeCima{
+
+#divTrofeusDeCima {
     display: flex;
     justify-content: space-around;
     padding: 5%;
 }
-#divTrofeusDeBaixo{
+
+#divTrofeusDeBaixo {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;  
+    justify-content: space-around;
     padding: 5%;
 }
-.imgConquistas{
+
+.imgConquistas {
     display: flex;
     width: 170px;
     justify-content: center;
     align-items: center;
 }
+
 .letraPreta {
     margin-top: 10%;
     /* margin-left: 10%; */
@@ -205,4 +218,12 @@ main button {
     background-color: rgba(0, 0, 255, 0.384);
     border-radius: 10px;
     padding: 5%;
+}
+
+.boxSeparadoraDeTrofeus {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid 2px black;
+    border-radius: 10px;
 }
