@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KC's Vôlei</title>
+    <link rel="stylesheet" href="../public/css/infoPaises.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="../public/ASSETS/logo.png"></a>
+        <ul class="menuHeader">
+            <li><a href="historia.html">HISTÓRIA DE UMA LENDA</a></li>
+            <li><a href="sobreMim.html">SOBRE MIM</a></li>
+            <li><a href="infoPaises.html">VNL</a></li>
+            <li><a href="partida.html">JOGAR</a></li>
+            <li><a href="dahsboard.html">PERFIL</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="divBandeirasDeCima">
+            <img src="../ASSETS/bandeiraBrasil.png" alt="" class="bandeiraPaises" id="bandeiraBrasil"
+                onclick="mudarParaBrasil()">
+            <img src="../ASSETS/bandeiraJapao.png" alt="" class="bandeiraPaises" id="bandeiraJapao"
+                onclick="mudarParaJapao()">
+        </div>
+        <h1 id="tituloFIVB">ESCOLHA UMA SELEÇÃO DA <span style="color:#002776">F</span><span
+                style="color:#FFCC00">I</span>V<span style="color: #FF0000;">B</span></h1>
+        <div id="divBandeirasDeBaixo">
+            <img src="../ASSETS/bandeiraPolonia.png" alt="" class="bandeiraPaises" id="bandeiraPolonia"
+                onclick="mudarParaPolonia()">
+            <img src="../ASSETS/bandeiraAlemanha.png" alt="" class="bandeiraPaises" id="bandeiraAlemanha"
+                onclick="mudarParaAlemanha()">
+        </div>
+        <div id="divInfoBrasil" style="display: none;">
+            <h1 style="color: white;" class="apelidoEquipe">OS IMPERADORES DO VÔLEI</h1>
+            <div class="retangulosInfo" style="background-color: #002776;">
+                <h1>JOGADOR DESTAQUE:</h1>
+                <img src="../ASSETS/iconeBruninho.png" alt="" class="iconesJogadores">
+                <hr style="color: #009C3B;" class="caixaDosNomes">
+                <h1 class="nomeJogadores">BRUNO REZENDE</h1>
+                <hr style="color: #FFDF00;" class="caixaDosNomes">
+                <div class="retangulosConquistas" style="background-color: #FFDF00;">
+                    <div class="caixaConquista" style="background-color: white;">
+                        <div id="divTrofeusDeBaixo">
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                    <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">Campeões mundias 29 vezes</p>
+                                </div>
+                            </div>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                    <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divInfoJapao" style="display: none;">
+            <h1 style="color: white;" class="apelidoEquipe">OS MAIS DISCIPLINADOS</h1>
+            <div class="retangulosInfo" style="background-color: #C3272B;">
+                <h1>JOGADOR DESTAQUE:</h1>
+                <img src="../ASSETS/iconeNishida.png" alt="" class="iconesJogadores">
+                <hr style="color: #FFFF;" class="caixaDosNomes">
+                <h1 class="nomeJogadores">YUJI NISHIDA</h1>
+                <hr style="color: #FFFF;" class="caixaDosNomes">
+                <div class="retangulosConquistas" style="background-color: #FFFFFF;">
+                    <div class="caixaConquista" style="background-color: white;">
+                        <div id="divTrofeusDeBaixo">
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                    <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">Campeões mundias 29 vezes</p>
+                                </div>
+                            </div>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                    <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divInfoPolonia" style="display: none;">
+            <h1 style="color: white;" class="apelidoEquipe">ESTRELAS EM ASCENSÃO</h1>
+            <div class="retangulosInfo" style="background-color: #FFFFFF;">
+                <h1>JOGADOR DESTAQUE:</h1>
+                <img src="../ASSETS/iconeLeon.png" alt="" class="iconesJogadores">
+                <hr style="color: #FF0000;" class="caixaDosNomes">
+                <h1 class="nomeJogadores" style="color: black;">WILFREDO LEON</h1>
+                <hr style="color: #FF0000;" class="caixaDosNomes">
+                <div class="retangulosConquistas" style="background-color: #FF0000;">
+                    <div class="caixaConquista" style="background-color: white;">
+                        <div id="divTrofeusDeBaixo">
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                    <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">Campeões mundias 29 vezes</p>
+                                </div>
+                            </div>
+
+                            <div class="boxSeparadoraDeTrofeus">
+                                <div style="display: flex; align-items: center; flex-direction: column;">
+                                    <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                    <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                    <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divInfoAlemanha" style="display: none;">
+            <h1 style="color: white;" class="apelidoEquipe">ABENÇOADOS PELA NATUREZA</h1>
+            <div class="retangulosInfo" style="background-color: #FFCC00;">
+                <h1>JOGADOR DESTAQUE:</h1>
+                <img src="../ASSETS/iconeTobias.png" alt="" id="iconeTobias">
+                <hr style="color: black;" class="caixaDosNomes">
+                <h1 class="nomeJogadores" style="color: black;">TOBIAS KRICK</h1>
+                <hr style="color: black;" class="caixaDosNomes">
+                <div class="retangulosConquistas" style="background-color: black;">
+                    <div class="caixaConquista" style="background-color: white;">
+                        <div id="divTrofeusDeBaixo">
+                            <div class="boxSeparadoraDeTrofeus">
+                                <img src="../ASSETS/logoFIVB.png" alt="" id="logoFIVB">
+                                <img src="../ASSETS/trofeuFIVB.png" alt="" class="imgConquistas">
+                                <p class="letraPreta">Campeões mundias 29 vezes</p>
+                            </div>
+                            <div class="boxSeparadoraDeTrofeus">
+                                <img src="../ASSETS/logoOlimpiadas.png" alt="" id="logoOlimpiadas">
+                                <img src="../ASSETS/medalhaDeOuro.png" alt="" class="imgConquistas">
+                                <p class="letraPreta">1° lugar 11 vezes nas Olimpíadas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<script>
+    function mudarParaBrasil() {
+        divBandeirasDeCima.style.display = 'none'
+        divBandeirasDeBaixo.style.display = 'none'
+        tituloFIVB.style.display = 'none'
+        divInfoBrasil.style.display = 'flex'
+    }
+    function mudarParaJapao() {
+        divBandeirasDeCima.style.display = 'none'
+        divBandeirasDeBaixo.style.display = 'none'
+        tituloFIVB.style.display = 'none'
+        divInfoBrasil.style.display = 'none'
+        divInfoJapao.style.display = 'flex'
+    }
+    function mudarParaPolonia() {
+        divBandeirasDeCima.style.display = 'none'
+        divBandeirasDeBaixo.style.display = 'none'
+        tituloFIVB.style.display = 'none'
+        divInfoBrasil.style.display = 'none'
+        divInfoJapao.style.display = 'none'
+        divInfoPolonia.style.display = 'flex'
+    }
+    function mudarParaAlemanha() {
+        divBandeirasDeCima.style.display = 'none'
+        divBandeirasDeBaixo.style.display = 'none'
+        tituloFIVB.style.display = 'none'
+        divInfoBrasil.style.display = 'none'
+        divInfoJapao.style.display = 'none'
+        divInfoPolonia.style.display = 'none'
+        divInfoAlemanha.style.display = 'flex'
+    }
+</script>
