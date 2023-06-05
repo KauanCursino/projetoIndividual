@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/cadastro.css">
     <title>KC's Vôlei</title>
 </head>
+
 <body>
     <!-- <header>
         <a href="index.html"><img src="../public/ASSETS/logo.png"></a>
@@ -27,13 +29,13 @@
                 <h3>Nome</h3>
                 <input id="iptNome" class="inputs" placeholder="Yoandy Leal">
                 <h3>Email</h3>
-                <input class='inputs 'id="iptEmail" placeholder="leal@gmail.com">
+                <input class='inputs ' id="iptEmail" placeholder="leal@gmail.com">
                 <h3>Altura</h3>
                 <input class="inputs" id="iptAltura" placeholder="201cm">
                 <h3>Senha</h3>
-                <input class='inputs 'id="iptSenha">
+                <input class='inputs ' id="iptSenha">
                 <h3>Confirme Sua Senha</h3>
-                <input class='inputs 'id="iptConfimracaoSenha">
+                <input class='inputs ' id="iptConfirmacaoSenha">
                 <button onclick="cadastrar()" class="btnCadastrar">CADASTRAR</button>
                 <button class="btnJaCadastrado"><a href="login.html">JÁ ESTOU CADASTRADO</a></button>
             </div>
@@ -41,4 +43,86 @@
         <div id="divImg"></div>
     </div>
 </body>
+
 </html>
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = iptNome.value;
+        var emailVar = iptEmail.value;
+        var alturaVar = iptAltura.value;
+        var senhaVar = iptSenha.value;
+        var confirmacaoSenhaVar = iptConfirmacaoSenha.value;
+
+        if (nomeVar == "" || emailVar == "" || alturaVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            alert('Os campos não podem estar em branco!')
+
+
+            return false;
+        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarUsuario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                alturaServer: alturaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                fetch("/usuarios/cadastrarLogin", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/usuario.js
+                        emailServer: emailVar,
+                        senhaServer: senhaVar
+                    })
+                }).then(function (resposta) {
+
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        alert('Cadastro Realizado com sucesso!')
+
+                        setTimeout(() => {
+                            window.location = "login.html";
+                        }, "2000")
+
+                        limparFormulario();
+                    } else {
+                        throw ("Houve um erro ao tentar realizar o cadastro!");
+                    }
+                }).catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+
+                return false;
+                limparFormulario();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+        return false;
+
+       
+    }
+</script>
