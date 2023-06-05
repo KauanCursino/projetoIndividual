@@ -52,7 +52,7 @@ body a {
     align-items: center;
     width: 50%;
     padding: 5%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 #divTituloCadastro h1{
     color: #002776;
@@ -83,6 +83,17 @@ body a {
     padding: 1%;
     margin-top: 5%;
     cursor: pointer;
+}
+.btnJaCadastrado{
+    border: none;
+    color: white;
+    font-size: 15px;
+    background-color: #002776;
+    width: 30%;
+    border-radius: 10px;
+    padding: 1%;
+    cursor: pointer;
+    margin-top: 1%;
 }
 #divImg{
     background: linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat, url(../ASSETS/imagemCadastro.jpg);
