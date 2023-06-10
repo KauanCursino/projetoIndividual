@@ -13,27 +13,28 @@ function autenticar(req, res) {
 
         usuarioModel.autenticar(email, senha)
             .then(
-                function (resultadoAutenticar) {
-                    console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+                function (resultadoAutenticarNome) {
+                    console.log(`\nResultados encontrados: ${resultadoAutenticarNome.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticarNome)}`); // transforma JSON em String
 
-                    if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
-
-                        // aquarioModel.buscarAquariosPorUsuario(resultadoAutenticar[0].id)
-                        //     .then((resultadoAquarios) => {
-                        //         if (resultadoAquarios.length > 0) {
-                        //             res.json({
-                        //                 id: resultadoAutenticar[0].id,
-                        //                 email: resultadoAutenticar[0].email,
-                        //                 nome: resultadoAutenticar[0].nome,
-                        //                 senha: resultadoAutenticar[0].senha
-                        //             });
-                        //         } else {
-                        //             res.status(204).json({ aquarios: [] });
-                        //         }
-                        //     })
-                    } else if (resultadoAutenticar.length == 0) {
+                    if (resultadoAutenticarNome.length == 1) {
+                        console.log(resultadoAutenticarNome);
+                        res.json(resultadoAutenticarNome[0]);
+                    //     aquarioModel.buscarAquariosPorUsuario(resultadoAutenticarNome[0].id)
+                    //         .then((resultadoAquarios) => {
+                    //             if (resultadoAquarios.length > 0) {
+                    //                 res.json({
+                    //                     id: resultadoAutenticarNome[0].id,
+                    //                     email: resultadoAutenticarNome[0].email,
+                    //                     nome: resultadoAutenticarNome[0].nome,
+                    //                     senha: resultadoAutenticarNome[0].senha
+                    //                 });
+                    //             } else {
+                    //                 res.status(204).json({ aquarios: [] });
+                    //             }
+                    //         })
+                    } else 
+                    if (resultadoAutenticarNome.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
@@ -47,6 +48,52 @@ function autenticar(req, res) {
                 }
             );
     }
+
+}
+
+function autenticarNome(req, res) {
+    var nome = req.body.nomeServer;
+    var id = req.body.idServer;
+
+    
+
+        usuarioModel.autenticarNome(nome, id)
+            .then(
+                function (resultadoAutenticarNome) {
+                    console.log(`\nResultados encontrados: ${resultadoAutenticarNome.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticarNome)}`); // transforma JSON em String
+
+                    if (resultadoAutenticarNome.length == 1) {
+                        console.log(resultadoAutenticarNome);
+                        res.json(resultadoAutenticarNome[0]);
+                    //     aquarioModel.buscarAquariosPorUsuario(resultadoAutenticarNome[0].id)
+                    //         .then((resultadoAquarios) => {
+                    //             if (resultadoAquarios.length > 0) {
+                    //                 res.json({
+                    //                     id: resultadoAutenticarNome[0].id,
+                    //                     email: resultadoAutenticarNome[0].email,
+                    //                     nome: resultadoAutenticarNome[0].nome,
+                    //                     senha: resultadoAutenticarNome[0].senha
+                    //                 });
+                    //             } else {
+                    //                 res.status(204).json({ aquarios: [] });
+                    //             }
+                    //         })
+                    } else 
+                    if (resultadoAutenticarNome.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    
 
 }
 
@@ -112,6 +159,7 @@ function cadastrarLogin(req, res) {
 }
 module.exports = {
     autenticar,
+    autenticarNome,
     cadastrarUsuario,
     cadastrarLogin
 }

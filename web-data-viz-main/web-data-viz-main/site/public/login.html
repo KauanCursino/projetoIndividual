@@ -46,9 +46,6 @@
             alert('Por favor, preencha os campos em branco!')
             return false;
         }
-        else {
-            setInterval(5000)
-        }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -67,16 +64,15 @@
 
             if (resposta.ok) {
                 console.log(resposta);
-                
+
                 resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    
-                    window.location.href = "dashboard.html";
-                });
+                            console.log(json);
+                            console.log(JSON.stringify(json));
+                            sessionStorage.EMAIL_USUARIO = json.email;
+                            sessionStorage.NOME_USUARIO = JSON.stringify(json.nome);
+                            sessionStorage.ID_USUARIO = JSON.stringify(json.id);
+                            window.location.href = "dashboard.html";
+                        });
 
             } else {
 
