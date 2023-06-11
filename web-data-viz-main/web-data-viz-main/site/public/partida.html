@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/partida.css">
+    <link rel="icon" href="ASSETS/logo.png">
     <title>KC's Vôlei</title>
 </head>
 
@@ -111,8 +112,11 @@
                     }
                     break;
             }
-            if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
-                seusPontos +=2
+            if (vtPossibilidades[sorteador] == '<p>Seu Ponta marca um ACE!</p>') {
+                placar++
+            }
+            if (vtPossibilidades[sorteador] == '<p>Seu central machucou a mão em um bloqueio!</p>') {
+                placarAdversario+=5
             }
             destaquesPrimeiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
             
