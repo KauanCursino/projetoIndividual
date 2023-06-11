@@ -46,20 +46,47 @@
         </div>
     </div>
     <div id="divSim" style="display: none;">
-        <div id="divPrimeiroSet">
+        <div id="divPrimeiroSet" class="sets" style="display: flex;">
             <h1>1º SET:</h1>
+            <div id="placarPrimeiroSet"></div>
+            <div id="destaquesPrimeiroSet">
+                <h3>MOMENTOS:</h3>
+            </div>
+            <button onclick="segundoSet()" class="btnProposta" style="background-color: #009C3B;">SEGUNDO SET!</button>
         </div>
-        <div id="divSegundoSet">
-            <h2>2º SET:</h2>
+        <div id="divSegundoSet" style="display: none;" class="sets">
+            <h1>2º SET:</h2>
+                <div id="placarSegundoSet"></div>
+            <div id="destaquesSegundoSet">
+                <h3>MOMENTOS:</h3>
+            </div>
+            <button onclick="terceiroSet()" class="btnProposta" style="background-color: #009C3B;">TERCEIRO SET!</button>
         </div>
-        <div id="divTerceiroSet">
-            <h2>3º SET:</h2>
+        <div id="divTerceiroSet" style="display: none;" class="sets">
+            <h1>3º SET:</h1>
+            <div id="placarTerceiroSet"></div>
+            <div id="destaquesTerceiroSet">
+                <h3>MOMENTOS:</h3>
+            </div>
+        </div>
+        <div id="divDerrota" style="display: none;">
+            <h1>VOCÊ PERDEU</h1>
+        </div>
+        <div id="divVitoria" style="display: none;">
+            <h1>VOCÊ VENCEU O CAMPEONATO NACIONAL!</h1>
         </div>
     </div>
+
 </body>
 
 </html>
 <script>
+    var pontosKarasuno = 0
+    var pontosInarizaki = 0
+    var sorteador = 0
+    var placarAdversario = 0
+    var vtPossibilidades = ['<p>Seu central machucou a mão em um bloqueio!</p>', ' ', ' ', '<p>A dupla estrela da Karasuno, Hinata e Kageyama surpreendem mais uma vez com seu ataque rápido</p>', ' ', ' ', '<p>Seu Ponta marca um ACE!</p>', ' ', ' ']
+    var vtImgPossibilidades = ['<img src="ASSETS/possibilidadeMaoMachucada.jpg_large">', ' ', '', '<img src="ASSETS/possibilidadeAtaqueSuperRapido.webp">', ' ', ' ',  '<img src="ASSETS/possibilidadeAce.jpg">', ' ', ' ']
     function negarProposta() {
         divEscolha.style.display = 'none';
         divNao.style.display = 'flex'
@@ -67,5 +94,99 @@
     function aceitarProposta() {
         divEscolha.style.display = 'none';
         divSim.style.display = 'flex';
+        suaCampanha()
+        // campanhaDoAdversario()
+    }
+    function suaCampanha() {
+        for (placar = 0; placar <= 25; placar++) {
+            placarAdversario = (Math.random() * 25).toFixed()
+            sorteador = ((Math.random() * 9)).toFixed()
+            if (placar == 25 || placarAdversario == 25) {
+                placarPrimeiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
+                    if (placar == 25) {
+                        pontosKarasuno++
+                    }
+                    if (placarAdversario == 25) {
+                        pontosInarizaki++
+                    }
+                    break;
+            }
+            if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
+                seusPontos +=2
+            }
+            destaquesPrimeiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
+            
+        }
+        for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
+        }
+    }
+    function segundoSet(){
+        divPrimeiroSet.style.display = 'none'
+        divSegundoSet.style.display = 'flex'
+        for (placar = 0; placar <= 25; placar++) {
+            placarAdversario = (Math.random() * 25).toFixed()
+            sorteador = ((Math.random() * 9)).toFixed()
+            if (placar == 25 || placarAdversario == 25) {
+                placarSegundoSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
+                    if (placar == 25) {
+                        pontosKarasuno++
+                    }
+                    if (placarAdversario == 25) {
+                        pontosInarizaki++
+                    }
+                    break;
+            }
+            if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
+                seusPontos +=2
+            }
+            destaquesSegundoSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
+            
+        }
+        for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
+        }
+        if (pontosKarasuno == 2) {
+            divSegundoSet.style.display = 'none'
+            divVitoria.style.display = 'block'
+            divVitoria.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno finalmente ganha o tão sonhado campeonato nacional`
+        }
+        if (pontosInarizaki == 2) {
+            divSegundoSet.style.display = 'none'
+            divDerrota.style.display = 'block'
+        }
+    }
+    function terceiroSet(){
+        divSegundoSet.style.display = 'none'
+        divTerceiroSet.style.display = 'flex'
+        for (placar = 0; placar <= 25; placar++) {
+            placarAdversario = (Math.random() * 25).toFixed()
+            sorteador = ((Math.random() * 9)).toFixed()
+            if (placar == 25 || placarAdversario == 25) {
+                placarTerceiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
+                    if (placar == 25) {
+                        pontosKarasuno++
+                    }
+                    if (placarAdversario == 25) {
+                        pontosInarizaki++
+                    }
+                    break;
+            }
+            if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
+                seusPontos +=2
+            }
+            destaquesTerceiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
+            
+        }
+        for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
+        }
+        if (pontosKarasuno == 2) {
+            divTerceiroSet.style.display = 'none'
+            divVitoria.style.display = 'block'
+            divVitoria.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno finalmente ganha o tão sonhado campeonato nacional`
+        }
+        if (pontosInarizaki == 2) {
+            divTerceiroSet.style.display = 'none'
+            divDerrota.style.display = 'block'
+            divDerrota.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno cai perante aos atuais campeões nacionais, agora conquistando o seu bi campeonato no intercolegial`
+        }
     }
 </script>

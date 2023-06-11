@@ -103,3 +103,33 @@ body{
     font-size: 30px;
     padding: 1%;
 }
+#divSim{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoDivSim.jpg);
+    background-size: cover;
+    justify-content: space-evenly;
+}
+.sets{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.sets p{
+    font-size: 25px;
+}
+.sets img{
+    height: 100px;
+}
+#divVitoria{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoVitoria.webp);
+    background-size: cover;
+}
+#divDerrota{
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoDerrota.jpg);
+    background-size: cover;
+}
