@@ -20,9 +20,9 @@
             <li><a href="dashboard.html">PERFIL</a></li>
         </ul>
     </header>
-    <div id="tituloDashboard">
-        <h1>Bem-Vindo,</h1> 
-        <p>A sua altura é: </p>
+    <div id="tituloDashboard" style="display: flex; gap: 10px;">
+        <h1>Bem-Vindo, </h1>
+        <b><p id="negritoTestePraBrunaNFicarBrava" style="font-size: 30px;"></p></b>
     </div>
     <div id="gráficos">
         <canvas id="myChart"></canvas>
@@ -30,6 +30,7 @@
 </body>
 </html>
 <script>
+    negritoTestePraBrunaNFicarBrava.innerHTML += sessionStorage.getItem('NOME_USUARIO');
     const ctx = document.getElementById('myChart');
   
     new Chart(ctx, {

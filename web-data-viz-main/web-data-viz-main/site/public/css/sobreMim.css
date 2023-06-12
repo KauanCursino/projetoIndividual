@@ -49,7 +49,7 @@ body{
 }
 #divFundoComLogo{
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fotoSobreMim2.jpg);
     background-size: cover;
 }
@@ -61,10 +61,10 @@ body{
 #conatiner{
     display: flex;
     justify-content: center;
-    margin-top: 3.5%;
+    margin-top: 10%;
 }
 #divSobreMim{
-    margin-top: 2%;
+    margin-top: 1%;
     padding: 3%;
     background-color: white;
     height: 100vh;
@@ -86,9 +86,9 @@ body{
     height: 250px;
     width: 15%;
     border-radius: 80px;
-    position: absolute;
-    margin-top: 30%;
     margin-left: 43%;
+    position: absolute;
+    margin-top: 47%;
 }
 #meuNome{
     /* color: #fff; */

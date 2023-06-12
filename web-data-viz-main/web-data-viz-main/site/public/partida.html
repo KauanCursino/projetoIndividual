@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/partida.js"></script>
     <link rel="stylesheet" href="./css/partida.css">
     <link rel="icon" href="ASSETS/logo.png">
     <title>KC's Vôlei</title>
@@ -49,29 +50,41 @@
     <div id="divSim" style="display: none;">
         <div id="divPrimeiroSet" class="sets" style="display: flex;">
             <h1>1º SET:</h1>
-            <div id="placarPrimeiroSet"></div>
             <div id="destaquesPrimeiroSet">
-                <h3>MOMENTOS:</h3>
+                <h3>MOMENTOS DO SET:</h3>
             </div>
+            <div id="placarPrimeiroSet"></div>
             <button onclick="segundoSet()" class="btnProposta" style="background-color: #009C3B;">SEGUNDO SET!</button>
         </div>
         <div id="divSegundoSet" style="display: none;" class="sets">
             <h1>2º SET:</h2>
+                <div id="destaquesSegundoSet">
+                    <h3>MOMENTOS DO SET:</h3>
+                </div>
                 <div id="placarSegundoSet"></div>
-            <div id="destaquesSegundoSet">
-                <h3>MOMENTOS:</h3>
-            </div>
-            <button onclick="terceiroSet()" class="btnProposta" style="background-color: #009C3B;">TERCEIRO SET!</button>
+                <button onclick="terceiroSet()" class="btnProposta" style="background-color: #009C3B;">TERCEIRO
+                    SET!</button>
         </div>
         <div id="divTerceiroSet" style="display: none;" class="sets">
             <h1>3º SET:</h1>
-            <div id="placarTerceiroSet"></div>
             <div id="destaquesTerceiroSet">
-                <h3>MOMENTOS:</h3>
+                <h3>MOMENTOS DO SET:</h3>
             </div>
+            <div id="placarTerceiroSet"></div>
         </div>
         <div id="divDerrota" style="display: none;">
-            <h1>VOCÊ PERDEU</h1>
+            <h1 style="color: #FF0000; font-size: 50px;">VOCÊ PERDEU</h1>
+            <p class="textoNao" id="textoDaDerrota">
+
+            </p>
+            <div class="divFala">
+                <p>
+                    “Era só um <span style="color: #FF0000;">sonho bobo</span> de clube escolar mesmo, melhor esquecer
+                    tudo isso logo, semana que vem tem prova...”
+                </p>
+                <p style=" margin-left: 60%;">- Você diz, <span style="color: #FF0000;">mentindo</span></p> para si
+                mesmo.
+            </div>
         </div>
         <div id="divVitoria" style="display: none;">
             <h1>VOCÊ VENCEU O CAMPEONATO NACIONAL!</h1>
@@ -82,12 +95,13 @@
 
 </html>
 <script>
+
     var pontosKarasuno = 0
     var pontosInarizaki = 0
     var sorteador = 0
     var placarAdversario = 0
     var vtPossibilidades = ['<p>Seu central machucou a mão em um bloqueio!</p>', ' ', ' ', '<p>A dupla estrela da Karasuno, Hinata e Kageyama surpreendem mais uma vez com seu ataque rápido</p>', ' ', ' ', '<p>Seu Ponta marca um ACE!</p>', ' ', ' ']
-    var vtImgPossibilidades = ['<img src="ASSETS/possibilidadeMaoMachucada.jpg_large">', ' ', '', '<img src="ASSETS/possibilidadeAtaqueSuperRapido.webp">', ' ', ' ',  '<img src="ASSETS/possibilidadeAce.jpg">', ' ', ' ']
+    var vtImgPossibilidades = ['<img src="ASSETS/possibilidadeMaoMachucada.jpg_large">', ' ', '', '<img src="ASSETS/possibilidadeAtaqueSuperRapido.webp">', ' ', ' ', '<img src="ASSETS/possibilidadeAce.jpg">', ' ', ' ']
     function negarProposta() {
         divEscolha.style.display = 'none';
         divNao.style.display = 'flex'
@@ -95,59 +109,61 @@
     function aceitarProposta() {
         divEscolha.style.display = 'none';
         divSim.style.display = 'flex';
-        suaCampanha()
+        // suaCampanha()
         // campanhaDoAdversario()
+        suaCampanhaTeste()
     }
     function suaCampanha() {
         for (placar = 0; placar <= 25; placar++) {
-            placarAdversario = (Math.random() * 25).toFixed()
+            placarAdversario = ((Math.random() * 25) + 1).toFixed()
             sorteador = ((Math.random() * 9)).toFixed()
             if (placar == 25 || placarAdversario == 25) {
                 placarPrimeiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
-                    if (placar == 25) {
-                        pontosKarasuno++
-                    }
-                    if (placarAdversario == 25) {
-                        pontosInarizaki++
-                    }
-                    break;
+                if (placar == 25) {
+                    pontosKarasuno++
+                }
+                if (placarAdversario == 25) {
+                    pontosInarizaki++
+                }
+                break;
             }
             if (vtPossibilidades[sorteador] == '<p>Seu Ponta marca um ACE!</p>') {
                 placar++
             }
             if (vtPossibilidades[sorteador] == '<p>Seu central machucou a mão em um bloqueio!</p>') {
-                placarAdversario+=5
+                placarAdversario += 5
             }
             destaquesPrimeiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
-            
+
         }
         for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
         }
     }
-    function segundoSet(){
+    function segundoSet() {
         divPrimeiroSet.style.display = 'none'
         divSegundoSet.style.display = 'flex'
-        for (placar = 0; placar <= 25; placar++) {
-            placarAdversario = (Math.random() * 25).toFixed()
-            sorteador = ((Math.random() * 9)).toFixed()
-            if (placar == 25 || placarAdversario == 25) {
-                placarSegundoSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
-                    if (placar == 25) {
-                        pontosKarasuno++
-                    }
-                    if (placarAdversario == 25) {
-                        pontosInarizaki++
-                    }
-                    break;
-            }
-            if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
-                seusPontos +=2
-            }
-            destaquesSegundoSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
-            
-        }
-        for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
-        }
+        // for (placar = 0; placar <= 25; placar++) {
+        //     placarAdversario = (Math.random() * 25).toFixed()
+        //     sorteador = ((Math.random() * 9)).toFixed()
+        //     if (placar == 25 || placarAdversario == 25) {
+        //         placarSegundoSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
+        //         if (placar == 25) {
+        //             pontosKarasuno++
+        //         }
+        //         if (placarAdversario == 25) {
+        //             pontosInarizaki++
+        //         }
+        //         break;
+        //     }
+        //     if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
+        //         seusPontos += 2
+        //     }
+        //     destaquesSegundoSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
+
+        // }
+        // for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
+        // }
+        suaCampanhaTeste()
         if (pontosKarasuno == 2) {
             divSegundoSet.style.display = 'none'
             divVitoria.style.display = 'block'
@@ -155,33 +171,34 @@
         }
         if (pontosInarizaki == 2) {
             divSegundoSet.style.display = 'none'
-            divDerrota.style.display = 'block'
+            divDerrota.style.display = 'flex'
         }
     }
-    function terceiroSet(){
+    function terceiroSet() {
         divSegundoSet.style.display = 'none'
         divTerceiroSet.style.display = 'flex'
-        for (placar = 0; placar <= 25; placar++) {
-            placarAdversario = (Math.random() * 25).toFixed()
-            sorteador = ((Math.random() * 9)).toFixed()
-            if (placar == 25 || placarAdversario == 25) {
-                placarTerceiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
-                    if (placar == 25) {
-                        pontosKarasuno++
-                    }
-                    if (placarAdversario == 25) {
-                        pontosInarizaki++
-                    }
-                    break;
-            }
-            if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
-                seusPontos +=2
-            }
-            destaquesTerceiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
-            
-        }
-        for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
-        }
+        // for (placar = 0; placar <= 25; placar++) {
+        //     placarAdversario = (Math.random() * 25).toFixed()
+        //     sorteador = ((Math.random() * 9)).toFixed()
+        //     if (placar == 25 || placarAdversario == 25) {
+        //         placarTerceiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
+        //         if (placar == 25) {
+        //             pontosKarasuno++
+        //         }
+        //         if (placarAdversario == 25) {
+        //             pontosInarizaki++
+        //         }
+        //         break;
+        //     }
+        //     if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
+        //         seusPontos += 2
+        //     }
+        //     destaquesTerceiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
+
+        // }
+        // for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
+        // }
+        suaCampanhaTeste()
         if (pontosKarasuno == 2) {
             divTerceiroSet.style.display = 'none'
             divVitoria.style.display = 'block'
@@ -189,8 +206,8 @@
         }
         if (pontosInarizaki == 2) {
             divTerceiroSet.style.display = 'none'
-            divDerrota.style.display = 'block'
-            divDerrota.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno cai perante aos atuais campeões nacionais, agora conquistando o seu bi campeonato no intercolegial`
+            divDerrota.style.display = 'flex'
+            textoDaDerrota.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno cai perante aos atuais campeões nacionais, agora conquistando o seu bi campeonato no intercolegial`
         }
     }
 </script>

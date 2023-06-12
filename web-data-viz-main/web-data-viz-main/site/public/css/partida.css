@@ -42,7 +42,7 @@ body{
     width: 100%;
 }
 #divEscolha{
-    background-image: url(../ASSETS/fundoHaikyuu.png);
+    background:linear-gradient(rgba(2, 0, 136, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoKaikyuuTeste.jpg);
     background-size: cover ;
     background-repeat: no-repeat;
     display: flex;
@@ -55,12 +55,13 @@ body{
 #divTexto{
     display: flex;
     justify-content: center;
-    background-color: #87cefa8c;
+    background-color: rgba(0, 0, 0, 0.329);
     font-size: 40px;
     width: 35%;
     margin-top: 10%;
     border-radius: 10px;
     padding: 3%;
+    color: #f5f1e6;
 }
 #divBotaoAnime{
     display: flex;
@@ -112,8 +113,10 @@ body{
 }
 .sets{
     width: 100%;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
+    background-color: #f5f1e6;
 }
 .sets p{
     font-size: 25px;
@@ -132,4 +135,10 @@ body{
     width: 100%;
     background:linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/fundoDerrota.jpg);
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 50px;
 }
