@@ -15,8 +15,8 @@ JsonMeusAcontecimentos = {
 },
 {
     idMeusAcontecimentos: 3,
-    texto: '',
-    img: ''
+    texto: '<p>Seu Levantador marca um ACE!</p>',
+    img: '<img src="ASSETS/possibilidadeAceLevantador.jpg">'
 },
 {
     idMeusAcontecimentos: 4,
@@ -25,13 +25,13 @@ JsonMeusAcontecimentos = {
 },
 {
     idMeusAcontecimentos: 5,
-    texto: '',
-    img: ''
+    texto: '<p>Bloqueio SENSACIONAL do seu Central</p>',
+    img: '<img src="ASSETS/possibilidadeBlock.jpg">'
 },
 {
     idMeusAcontecimentos: 6,
-    texto: '',
-    img: ''
+    texto: '<p>POR POUCO o seu Central recebe a largada</p>',
+    img: '<img src="ASSETS/possibilidadeCentralRecepcao.jpg">'
 },
 {
     idMeusAcontecimentos: 7,
@@ -40,8 +40,8 @@ JsonMeusAcontecimentos = {
 },
 {
     idMeusAcontecimentos: 8,
-    texto: '',
-    img: ''
+    texto: '<p>Seu levantador parte para a defesa e salva uma bola incrível</p>',
+    img: '<img src="ASSETS/possibilidadeLevantadorRecepcao.webp">'
 },
 {
 
@@ -50,7 +50,7 @@ JsonMeusAcontecimentos = {
 function suaCampanhaTeste() {
     for (placar = 0; placar <= 25; placar++) {
         placarAdversario = ((Math.random() * 25) + 1).toFixed()
-        sorteador = ((Math.random() * 9)).toFixed()
+        sorteador = ((Math.random() * 8)).toFixed()
         if (placar == 25 || placarAdversario == 25) {
             if (pontosKarasuno == 0 && pontosInarizaki == 0) {
                 placarPrimeiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
@@ -83,7 +83,5 @@ function suaCampanhaTeste() {
             destaquesSegundoSet.innerHTML += JsonMeusAcontecimentos[sorteador].texto
             destaquesSegundoSet.innerHTML += JsonMeusAcontecimentos[sorteador].img
         }
-        // destaquesTerceiroSet.innerHTML += JsonMeusAcontecimentos[sorteador].texto
-        // destaquesTerceiroSet.innerHTML += JsonMeusAcontecimentos[sorteador].img
     }
 }

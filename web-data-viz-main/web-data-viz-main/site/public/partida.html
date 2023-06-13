@@ -57,11 +57,11 @@
             <button onclick="segundoSet()" class="btnProposta" style="background-color: #009C3B;">SEGUNDO SET!</button>
         </div>
         <div id="divSegundoSet" style="display: none;" class="sets">
-            <h1>2º SET:</h2>
-                <div id="destaquesSegundoSet">
-                    <h3>MOMENTOS DO SET:</h3>
-                </div>
-                <div id="placarSegundoSet"></div>
+            <h1>2º SET:</h1>
+            <div id="destaquesSegundoSet">
+                <h3>MOMENTOS DO SET:</h3>
+            </div>
+            <div id="placarSegundoSet"></div>
                 <button onclick="terceiroSet()" class="btnProposta" style="background-color: #009C3B;">TERCEIRO
                     SET!</button>
         </div>
@@ -77,7 +77,7 @@
             <p class="textoNao" id="textoDaDerrota">
 
             </p>
-            <div class="divFala">
+            <div class="divFalaPartida">
                 <p>
                     “Era só um <span style="color: #FF0000;">sonho bobo</span> de clube escolar mesmo, melhor esquecer
                     tudo isso logo, semana que vem tem prova...”
@@ -87,10 +87,21 @@
             </div>
         </div>
         <div id="divVitoria" style="display: none;">
-            <h1>VOCÊ VENCEU O CAMPEONATO NACIONAL!</h1>
+            <h1 style="color: #009C3B; font-size: 50px;">VOCÊ GANHOU</h1>
+            <p class="textoNao" id="textoDaVitoria">
+
+            </p>
+            <div class="divFalaPartida">
+                <p>
+                    “Finalmente <span style="color: #009C3B;">meu grande sonho de infância</span> se realizou, muito
+                    obrigado gente, eu com certeza vou me <span style="color: #009C3B;">lembrar disso para
+                        sempre</span>”
+                </p>
+                <p style=" margin-left: 60%;">- Você diz, <span style="color: #009C3B;">realizado</span></p>
+            </div>
         </div>
     </div>
-
+    
 </body>
 
 </html>
@@ -113,96 +124,29 @@
         // campanhaDoAdversario()
         suaCampanhaTeste()
     }
-    function suaCampanha() {
-        for (placar = 0; placar <= 25; placar++) {
-            placarAdversario = ((Math.random() * 25) + 1).toFixed()
-            sorteador = ((Math.random() * 9)).toFixed()
-            if (placar == 25 || placarAdversario == 25) {
-                placarPrimeiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
-                if (placar == 25) {
-                    pontosKarasuno++
-                }
-                if (placarAdversario == 25) {
-                    pontosInarizaki++
-                }
-                break;
-            }
-            if (vtPossibilidades[sorteador] == '<p>Seu Ponta marca um ACE!</p>') {
-                placar++
-            }
-            if (vtPossibilidades[sorteador] == '<p>Seu central machucou a mão em um bloqueio!</p>') {
-                placarAdversario += 5
-            }
-            destaquesPrimeiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
-
-        }
-        for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
-        }
-    }
     function segundoSet() {
         divPrimeiroSet.style.display = 'none'
         divSegundoSet.style.display = 'flex'
-        // for (placar = 0; placar <= 25; placar++) {
-        //     placarAdversario = (Math.random() * 25).toFixed()
-        //     sorteador = ((Math.random() * 9)).toFixed()
-        //     if (placar == 25 || placarAdversario == 25) {
-        //         placarSegundoSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
-        //         if (placar == 25) {
-        //             pontosKarasuno++
-        //         }
-        //         if (placarAdversario == 25) {
-        //             pontosInarizaki++
-        //         }
-        //         break;
-        //     }
-        //     if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
-        //         seusPontos += 2
-        //     }
-        //     destaquesSegundoSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
-
-        // }
-        // for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
-        // }
         suaCampanhaTeste()
         if (pontosKarasuno == 2) {
             divSegundoSet.style.display = 'none'
-            divVitoria.style.display = 'block'
-            divVitoria.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno finalmente ganha o tão sonhado campeonato nacional`
+            divVitoria.style.display = 'flex'
+            textoDaVitoria.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno finalmente ganha o tão sonhado campeonato nacional`
         }
         if (pontosInarizaki == 2) {
             divSegundoSet.style.display = 'none'
             divDerrota.style.display = 'flex'
+            textoDaDerrota.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno cai perante aos atuais campeões nacionais, agora conquistando o seu bi campeonato no intercolegial`
         }
     }
     function terceiroSet() {
         divSegundoSet.style.display = 'none'
         divTerceiroSet.style.display = 'flex'
-        // for (placar = 0; placar <= 25; placar++) {
-        //     placarAdversario = (Math.random() * 25).toFixed()
-        //     sorteador = ((Math.random() * 9)).toFixed()
-        //     if (placar == 25 || placarAdversario == 25) {
-        //         placarTerceiroSet.innerHTML += `<h1>KARASUNO ${placar} x ${placarAdversario} INARIZAKI<h1>`
-        //         if (placar == 25) {
-        //             pontosKarasuno++
-        //         }
-        //         if (placarAdversario == 25) {
-        //             pontosInarizaki++
-        //         }
-        //         break;
-        //     }
-        //     if (vtPossibilidades[sorteador] == 'Seu Ponta acerta 2 aces de saque SEGUIDOS!') {
-        //         seusPontos += 2
-        //     }
-        //     destaquesTerceiroSet.innerHTML += `<br> ${vtPossibilidades[sorteador]} ${vtImgPossibilidades[sorteador]}<br>`
-
-        // }
-        // for (var seusPontos = 1; seusPontos <= 25; seusPontos++) {
-        // }
         suaCampanhaTeste()
         if (pontosKarasuno == 2) {
             divTerceiroSet.style.display = 'none'
-            divVitoria.style.display = 'block'
-            divVitoria.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno finalmente ganha o tão sonhado campeonato nacional`
+            divVitoria.style.display = 'flex'
+            textoDaVitoria.innerHTML += `Com um placar final de ${pontosKarasuno} x ${pontosInarizaki} o time da Karasuno finalmente ganha o tão sonhado campeonato nacional`
         }
         if (pontosInarizaki == 2) {
             divTerceiroSet.style.display = 'none'
