@@ -1,19 +1,26 @@
 CREATE DATABASE KCsVolei;
 
 USE KCsVolei;
- 
 CREATE TABLE usuario(
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45),
-altura INT,
-fkLogin INT,
-FOREIGN KEY (fkLogin) REFERENCES login(idLogin)
+altura INT
 );
+SELECT * FROM usuario;
+SELECT * FROM login;
+SELECT nome, idUsuario, email  FROM login JOIN usuario ON idUsuario = fkUsuario WHERE email = 'amandacupola@gmaol.com' AND senha = '123';
+
+UPDATE usuario SET fkLogin = 1 WHERE idUsuario = 1;
+
+
+
 
 CREATE TABLE login(
 idLogin INT PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(45),
-senha VARCHAR(45)
+senha VARCHAR(45),
+fkUsuario INT,
+FOREIGN KEY (fkusuario) REFERENCES usuario(idUsuario)
 );
 
 CREATE TABLE selecao(
