@@ -194,7 +194,7 @@
         divInfoJapao.style.display = 'none'
         divInfoPolonia.style.display = 'none'
         divInfoAlemanha.style.display = 'none'
-        fetch("/selecoes/listarDesc", {
+        fetch("/selecoes/listarDescBrasil", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -204,7 +204,7 @@
 
             if (resposta.ok) {
                 console.log(resposta);
-                descricaoBrasil.innerHTML += resposta[0]
+                descricaoBrasil.innerHTML += resposta[0].descricaoSelecao;
             } else {
 
                 console.log("Houve um erro ao tentar plotar a Descricao!");

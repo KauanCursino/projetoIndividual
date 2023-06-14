@@ -28,7 +28,7 @@ function listarTitulos(req, res) {
 
 
 }
-function listarDesc(req, res) {
+function listarDescBrasil(req, res) {
     var descricaoSelecao = req.body.descricaoSelecao
     if (descricaoSelecao == undefined) {
         res.status(400).send("Sua Descrição está undefined");
@@ -53,5 +53,5 @@ function listarDesc(req, res) {
 
 module.exports = {
     listarTitulos,
-    listarDesc
+    listarDescBrasil
 }
