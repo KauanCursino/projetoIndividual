@@ -55,6 +55,7 @@ body{
     margin-right: 30%;
     color: white;
     font-size: 30px;
+    gap:15px;
 }
 
 #divTexto button {

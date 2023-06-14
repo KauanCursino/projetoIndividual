@@ -47,6 +47,7 @@
 
 </html>
 <script>
+    var fkLoginGlobal = 0
     function cadastrar() {
 
         //Recupere o valor da nova input pelo nome do id
@@ -56,9 +57,6 @@
         var alturaVar = iptAltura.value;
         var senhaVar = iptSenha.value;
         var confirmacaoSenhaVar = iptConfirmacaoSenha.value;
-        // var idUsuario = ''
-        sessionStorage.ID_USUARIO = '';
-        var fkUsuarioVar = sessionStorage.getItem('ID_USUARIO');
         if (nomeVar == "" || emailVar == "" || alturaVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             alert('Os campos não podem estar em branco!')
 
@@ -70,7 +68,7 @@
         // }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrarUsuario", {
+        fetch("/usuarios/cadastrarLogin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -78,15 +76,15 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                alturaServer: alturaVar
+                emailServer: emailVar,
+                senhaServer: senhaVar
             })
         }).then(function (resposta) {
-
+            
             console.log("resposta: ", resposta);
             if (resposta.ok) {
-                fkUsuarioServer: resultSetHeader['insertId'];
-                fetch("/usuarios/cadastrarLogin", {
+                // sessionStorage.ID_USUARIO = resposta[0].idLogin
+                fetch("/usuarios/cadastrarUsuario", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -94,9 +92,8 @@
                     body: JSON.stringify({
                         // crie um atributo que recebe o valor recuperado aqui
                         // Agora vá para o arquivo routes/usuario.js
-                        emailServer: emailVar,
-                        senhaServer: senhaVar,
-                        fkusuarioServer: fkUsuarioVar
+                        nomeServer: nomeVar,
+                        alturaServer: alturaVar
                     })
                 }).then(function (resposta) {
 
@@ -118,7 +115,6 @@
                 });
 
                 return false;
-                limparFormulario();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -126,7 +122,29 @@
             console.log(`#ERRO: ${resposta}`);
         });
         return false;
-
+        // selectfkLogin()
        
     }
+    function selectfkLogin() {
+    var fkLogin;
+    fetch("usuarios/listarUltimoIdLoginTabela")
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            var fkLoginArray = resposta[0];
+            fkLogin = fkLoginArray.idLogin-1;
+            fkLoginGlobal = fkLogin;
+            console.log(fkLoginGlobal);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ ultimo idLogin: ${error.message}`
+        );
+      });
+  }
 </script>

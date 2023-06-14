@@ -7,6 +7,7 @@
 }
 
 * {
+    font-family: var(--fonteTitulo);
     margin: 0;
     padding: 0;
 }
@@ -32,6 +33,13 @@ body a{
     text-decoration: none;
 }
 body{
+    background-color: #f5f1e6;
+    background:linear-gradient(rgba(207, 198, 178, 0.432), rgba(0, 0, 0, 0.253))repeat,  url(../ASSETS/logoFIVB.png);
+    background-image: url(../ASSETS/logoFIVB.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
@@ -44,4 +52,12 @@ body{
     align-items: center;
     width: 100%;
     justify-content: space-evenly;
+}
+#divDash{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#divGraficos{
+    width: 80%;
 }

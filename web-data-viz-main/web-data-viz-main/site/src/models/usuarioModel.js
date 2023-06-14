@@ -18,28 +18,35 @@ function autenticarNome(nome, id) {
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
-function cadastrarUsuario(nome, altura) {
+function cadastrarUsuario(nome, altura, fkLogin) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, altura);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO usuario (nome, altura) VALUES ('${nome}', '${altura}');
+        INSERT INTO usuario (nome, altura, fkLogin) VALUES ('${nome}', '${altura}', (SELECT MAX(idLogin) FROM login));
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function cadastrarLogin(email, senha, fkUsuario){
+function cadastrarLogin(email, senha){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", email, senha);
     var instrucao = `
-        INSERT INTO login (email, senha, fkUsuario) VALUES ('${email}', '${senha}', '${fkUsuario}')
+        INSERT INTO login (email, senha) VALUES ('${email}', '${senha}')
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+function listarUltimoIdLoginTabela(){
+    var instrucao = `
+    SELECT idLogin from Login order by idLogin desc LIMIT 1;
+    `;
     return database.executar(instrucao);
 }
 module.exports = {
     autenticar,
     autenticarNome,
     cadastrarUsuario,
-    cadastrarLogin
+    cadastrarLogin,
+    listarUltimoIdLoginTabela
 };

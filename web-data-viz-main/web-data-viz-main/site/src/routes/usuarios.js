@@ -9,8 +9,10 @@ router.post("/cadastrarUsuario", function (req, res) {
 })
 router.post("/cadastrarLogin", function (req, res) {
     usuarioController.cadastrarLogin(req, res);
-})
-
+});
+router.get("/listarUltimoIdLoginTabela", function (req, res) {
+    loginTabelaController.listarUltimoIdLoginTabela(req, res);
+});
 router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
