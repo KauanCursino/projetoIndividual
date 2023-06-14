@@ -63,7 +63,27 @@ INSERT INTO jogador VALUES (null, 'Wilfredo Leon', 'Ponteiro', 201, 3),
 						   (null, 'Mateusz Bieniek', 'Central', 210, 3),
                            (null, 'Tobias Krick', 'Central', 211, 4),
                            (null, 'Christian Fromm', 'Ponteiro', 204, 4);
+
+INSERT INTO jogador VALUES (null, 'Alan Souza', 'Oposto', 202, 1),
+						   (null, 'Honorato', 'Ponteiro', 190, 1),
+                           (null, 'Lucarelli', 'Ponteiro', 196, 1),
+                           (null, 'Flavio', 'Central', 200, 1);
                            
+INSERT INTO jogador VALUES (null, 'Taishi Onodera', 'Central', 201, 2),
+						   (null, 'Yamauchi', 'Central', 204, 2),
+                           (null, 'Miyaura', 'Ponteiro', 190, 2),
+                           (null, 'Yamamoto', 'Líbero', 174, 2);
+                           
+INSERT INTO jogador VALUES (null, 'Kurek', 'Oposto', 205, 3),
+						   (null, 'Janusz', 'Levantador', 195, 3),
+                           (null, 'Kamil', 'Ponteiro', 194, 3),
+                           (null, 'Fornal', 'Ponteiro', 200, 3);
+                           
+INSERT INTO jogador VALUES (null, 'Ruben', 'Ponteiro', 204, 4),
+						   (null, 'Lukas', 'Levantador', 196, 4),
+                           (null, 'Krage', 'Central', 204, 4),
+						   (null, 'Maase', 'Oposto', 212, 4);
+
                            SELECT (SELECT ROUND(AVG(altura)) FROM jogador WHERE fkSelecao = 1) Brasil,
                            (SELECT ROUND(AVG(altura)) FROM jogador WHERE fkSelecao = 2) Japão,
                            (SELECT ROUND(AVG(altura)) FROM jogador WHERE fkSelecao = 3) Polônia,
